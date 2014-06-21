@@ -1,0 +1,143 @@
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+//
+// Colors variables
+// --------------------------------------------------
+@brand-primary:         #5B3566;
+@body-bg:               #FAF7EB;
+@radius:                4px;
+@white:                 #FFFFFF;
+@black:                 #000000;
+
+//
+// Mixin for generating new style
+
+.font-general() {
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-leight(@size: inherit) {
+  font-family: Junction, Verdana;
+  font-size: @size;
+}
+.font-bold(@size: inherit) {
+  font-family: JunctionBold, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: @size;
+}
+
+.btn-styles(@btn-color: #555) {
+  background-image: none;
+  background-repeat: none;
+  border: none;
+  background: @btn-color;
+
+  &:hover,
+  &:focus {
+    background: darken(@btn-color, 12%);
+  }
+
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    background: darken(@btn-color, 12%);
+  }
+}
+
+//
+// Fonts
+
+@font-face {
+    font-family: 'JunctionBold';
+    src: url('../fonts/junction-bold.eot');
+    src: url('../fonts/junction-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/junction-bold.woff') format('woff'),
+         url('../fonts/junction-bold.ttf') format('truetype'),
+         url('../fonts/junction-bold.svg#junctionbold') format('svg');
+    .font-general;
+}
+
+@font-face {
+    font-family: 'Junction';
+    src: url('../fonts/junction-regular.eot');
+    src: url('../fonts/junction-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/junction-regular.woff') format('woff'),
+         url('../fonts/junction-regular.ttf') format('truetype'),
+         url('../fonts/junction-regular.svg#junctionregular') format('svg');
+    .font-general;
+}
+
+//
+// General style
+
+body {
+  .font-leight(12px);
+  line-height: 150%;
+  background: @body-bg;
+}
+
+h1, h2 { //h2 is to be removed
+  color: @brand-primary;
+}
+
+h1, h2, h3, h4, h5 {
+  .font-bold;
+}
+
+a, a:hover {
+  color: @brand-primary;
+}
+
+.user-menu {
+  a {
+    .font-leight;
+    padding: .4em;
+    color: darken(@link-color, 12%);
+  }
+  a:hover {
+    background: @black;
+    border-radius: @radius;
+    text-decoration: none;
+    color: @white;
+  }
+}
+
+.box {
+  background-color: @black;
+  padding: 2em 3em;
+  margin-bottom: 20px;
+  border-radius: @radius;
+}
+
+#main {
+  color: #302B2B;
+}
+.sidebar {
+  .nav > li > a {
+    padding: 10px 10px 6px;
+    color: @link-color;
+  }
+  .nav > li > a:hover {
+    color: @white;
+    background-color: @body-bg;
+  }
+  .nav-sidebar a {
+    .font-bold(.8em);;
+    color: darken(@link-color, 12%);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+}
+
+.sidebar .sub-level li.active a, .sidebar .sub-level li.active a:hover, .sidebar .sub-level li.active a:focus, .sidebar ul li.active a, .sidebar ul li.active a:hover {
+  color: @white;
+  background-color: @brand-primary;
+  border-radius: @radius;
+}
+.btn-primary { .btn-styles(@btn-primary-bg); }

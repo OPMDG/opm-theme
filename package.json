@@ -1,0 +1,32 @@
+{
+  "name": "opm-theme",
+  "description": "Bootstrap theme for Open PostgreSQL Monitoring.",
+  "version": "0.1.0",
+  "keywords": [
+    "opm",
+    "bootstrap",
+    "css"
+  ],
+  "homepage": "http://opm.io",
+  "author": "OPMDG",
+  "style": "./dist/opm-theme.css",
+  "less": "./opm-theme.less",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opmdg/opm-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opmdg/opm-theme/issues"
+  },
+  "license": {
+    "type": "PostgreSQL",
+    "url": "https://github.com/opmdg/opm-core/blob/master/LICENSE"
+  },
+  "devDependencies": {
+    "grunt": "0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-less": "~0.9.0",
+    "load-grunt-tasks": "~0.3.0"
+  }
+}

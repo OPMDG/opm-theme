@@ -1,0 +1,4 @@
+.*.sw*
+bootstrap/*
+dist/*
+node_modules
