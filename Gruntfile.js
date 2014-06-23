@@ -53,5 +53,5 @@ module.exports = function(grunt) {
   // This plugin provide necessary tasks.
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
   // Tasks
-  grunt.registerTask('dist', ['clean', 'less', 'concat']);
+  grunt.registerTask('default', ['clean', 'less', 'concat']);
 }
