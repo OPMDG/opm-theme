@@ -127,7 +127,7 @@ h1 {
 }
 
 h2, h2.panel-title {
-  color: darken(@brand-primary,12%);
+  color: lighten(@brand-primary,12%);
   font-size: 1.6em;
 }
 
@@ -170,9 +170,6 @@ a, a:hover {
   background-color: @white;
 }
 
-#main {
-  color: #302b2b;
-}
 .sidebar {
   .nav > li > a {
     padding: 10px 10px 6px;
@@ -232,11 +229,26 @@ a, a:hover {
   a {
     color: @black;
     margin-right: 2em;
+    transition-duration: 1s;
+    transition-property: color;
+    display: block;
+    padding: .3em .3em 0;
+    border: 1px solid @white;
+    border-radius: @radius;
   }
   a:hover {
     color: @brand-primary;
+    text-decoration: none;
+    background: @body-bg;
+    border: 1px solid @body-bg;
+    border-radius: @radius;
   }
-
+  h2 {
+    border-bottom: 1px solid lighten(@brand-default, 50%);
+    font-size: 1.4em;
+    padding-bottom: .4em;
+    margin-bottom: 1em;
+  }
 }
 
 span.label {
@@ -248,16 +260,16 @@ span.label {
 }
 
 .btn-default {
-  background-image: linear-gradient(to bottom, #f4f4f4 0px, #dfdfdd 100%);
+  background-image: linear-gradient(to bottom, lighten(@brand-default,62%) 0px, lighten(@brand-default,54%) 100%);
   background-repeat: repeat-x;
-  border-color: #DFDFDD;
-  text-shadow: 0 1px 0 #F4F4F4;
+  border-color: lighten(@brand-default,54%);
+  text-shadow: 0 1px 0 lighten(@brand-default,62%);
 }
 
 .btn-default:hover, .btn-default:focus {
     background-image: none;
-  background-color: #dfdfdd;
-  border-color: #d4d4d1;
+  background-color: lighten(@brand-default,54%);
+  border-color: lighten(@brand-default,50%);
 }
 
 .btn-primary { .btn-styles(@btn-primary-bg); }
@@ -287,6 +299,30 @@ span.label {
   margin-left: 0;
 }
 
+.services_list {
+  .row {
+    margin-bottom: 3em;
+  }
+  h3 {
+    color: lighten(@brand-default,20%);
+  }
+  a {
+    text-decoration: none;
+    .warehouse-service {
+      color: #75517B;
+    }
+  }
+  a:hover .warehouses-service {
+    color: @brand-primary;
+    text-decoration: underline;
+  }
+  .service-item h3 {
+    padding: 0 0 .4em 0;
+    margin: .4em 0 .4em 0;
+  }
+}
+//
+// Graphs
 .scales {
   .btn-toolbar {
     margin: 0;
@@ -312,6 +348,45 @@ span.label {
     margin-right: .4em;
     color: lighten(@brand-primary,12%);
   }
+}
+
+.graph_container {
+  margin-bottom: 30px;
+  clear: right;
+  border: 1px solid @gray-lighter;
+  padding: 10px 10px;
+}
+
+.plot {
+    height: 300px;
+}
+
+.input-daterange-to {
+  display: inline-block;
+  min-width: 16px;
+  height: 30px;
+  padding: 4px 3px;
+  font-weight: normal;
+  line-height: 21px;
+  text-align: center;
+  text-shadow: 0 1px 0 @white;
+  vertical-align: middle;
+  background-color: lighten(@brand-default,58%);
+  border: 1px solid lighten(@brand-default,54%);
+}
+
+.graph-legend {
+  padding-top: 5px;
+  overflow: auto;
+  color: @gray-darker;
+}
+
+label.deactivated {
+  text-decoration: line-through
+}
+
+.datepick {
+  width: 200px;
 }
 
 // User menu
