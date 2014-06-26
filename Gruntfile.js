@@ -28,7 +28,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           strictMath: true,
-          sourceMap: true,
+          sourceMap: false,
         },
         files: {
           'dist/css/<%= pkg.name %>.css': '<%= pkg.name %>.less'
