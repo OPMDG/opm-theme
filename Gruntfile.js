@@ -57,10 +57,17 @@ module.exports = function(grunt) {
         src: 'dist/css/<%= pkg.name %>.min.css',
         dest: 'dist/css/<%= pkg.name %>.min.css',
       }
+    },
+    csslint: {
+      options: {
+        csslintrc: './.csslintrc'
+      },
+      src: 'dist/css/<%= pkg.name %>.css'
     }
   });
   // This plugin provide necessary tasks.
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
   // Tasks
   grunt.registerTask('default', ['clean', 'copy','less', 'concat']);
+  grunt.registerTask('test', ['clean', 'less', 'concat', 'csslint']);
 }

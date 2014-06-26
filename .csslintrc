@@ -1,0 +1,9 @@
+{
+  "adjoining-classes": false,
+  "box-model": false,
+  "font-sizes": false,
+  "overqualified-elements": true,
+  "qualified-headings": false,
+  "unique-headings": false,
+  "unqualified-attributes": false
+}
