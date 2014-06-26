@@ -15,6 +15,15 @@ module.exports = function(grunt) {
     clean: {
       dist: ['dist']
     },
+    copy: {
+      fonts: {
+        expand: 'true',
+        cwd: 'res/',
+        filter: 'isFile',
+        src: 'fonts/*',
+        dest: 'dist/'
+      }
+    },
     less: {
       dev: {
         options: {
@@ -22,7 +31,7 @@ module.exports = function(grunt) {
           sourceMap: true,
         },
         files: {
-          'dist/<%= pkg.name %>.css': '<%= pkg.name %>.less'
+          'dist/css/<%= pkg.name %>.css': '<%= pkg.name %>.less'
         }
       },
       minify: {
@@ -31,7 +40,7 @@ module.exports = function(grunt) {
           report: 'min',
         },
         files: {
-          'dist/<%= pkg.name %>.min.css': 'dist/<%= pkg.name %>.css',
+          'dist/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css',
         }
       }
     },
@@ -41,17 +50,17 @@ module.exports = function(grunt) {
         stripBanners: false
       },
       full: {
-        src: 'dist/<%= pkg.name %>.css',
-        dest: 'dist/<%= pkg.name %>.css',
+        src: 'dist/css/<%= pkg.name %>.css',
+        dest: 'dist/css/<%= pkg.name %>.css',
       },
       min: {
-        src: 'dist/<%= pkg.name %>.min.css',
-        dest: 'dist/<%= pkg.name %>.min.css',
+        src: 'dist/css/<%= pkg.name %>.min.css',
+        dest: 'dist/css/<%= pkg.name %>.min.css',
       }
     }
   });
   // This plugin provide necessary tasks.
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
   // Tasks
-  grunt.registerTask('default', ['clean', 'less', 'concat']);
+  grunt.registerTask('default', ['clean', 'copy','less', 'concat']);
 }

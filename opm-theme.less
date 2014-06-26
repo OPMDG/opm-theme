@@ -8,11 +8,18 @@
 //
 // Colors variables
 // --------------------------------------------------
-@brand-primary:         #5B3566;
-@body-bg:               #FAF7EB;
+@brand-default:         #555753;
+@brand-primary:         #5b3566;
+@brand-success:         #539e20;
+@brand-info:            #fef8d4;
+@brand-warning:         #ec7606;
+@brand-danger:          #d21617;
+@body-bg:               #faf7eb;
 @radius:                4px;
-@white:                 #FFFFFF;
+@white:                 #ffffff;
 @black:                 #000000;
+@label-default-bg:      @brand-default;
+@scale-bg:              #e3dbca;
 
 //
 // Mixin for generating new style
@@ -28,7 +35,7 @@
 }
 .font-bold(@size: inherit) {
   font-family: JunctionBold, Verdana, sans-serif;
-  font-weight: bold;
+  font-weight: normal;
   font-size: @size;
 }
 
@@ -76,18 +83,64 @@
 //
 // General style
 
+.label-default {
+  .label-variant(@label-default-bg);
+}
+
+.label-primary {
+  .label-variant(@label-primary-bg);
+}
+
+.label-success {
+  .label-variant(@label-success-bg);
+}
+
+.label-info {
+  .label-variant(@label-info-bg);
+}
+
+.label-warning {
+  .label-variant(@label-warning-bg);
+}
+
+.label-danger {
+  .label-variant(@label-danger-bg);
+}
+
+
 body {
-  .font-leight(12px);
+  font-family: Verdana, sans-serif;
+  font-size: 12px;
   line-height: 150%;
   background: @body-bg;
 }
 
-h1, h2 { //h2 is to be removed
-  color: @brand-primary;
-}
-
 h1, h2, h3, h4, h5 {
   .font-bold;
+}
+
+h1 {
+  margin-top: 0;
+  padding-top: 0;
+  color: @brand-primary;
+  font-size: 2em;
+}
+
+h2, h2.panel-title {
+  color: darken(@brand-primary,12%);
+  font-size: 1.6em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+hr {
+  border-color: lighten(@brand-default, 50%);
 }
 
 a, a:hover {
@@ -113,25 +166,36 @@ a, a:hover {
   padding: 2em 3em;
   margin-bottom: 20px;
   border-radius: @radius;
+  color: lighten(@brand-primary,12%);
+  background-color: @white;
 }
 
 #main {
-  color: #302B2B;
+  color: #302b2b;
 }
 .sidebar {
   .nav > li > a {
     padding: 10px 10px 6px;
-    color: @link-color;
-  }
-  .nav > li > a:hover {
-    color: @white;
-    background-color: @body-bg;
+    color: @link-color; //FIXME ?
   }
   .nav-sidebar a {
     .font-bold(.8em);;
-    color: darken(@link-color, 12%);
+    color: lighten(@link-color, 12%);
     text-transform: uppercase;
     letter-spacing: .1em;
+  }
+  ul {
+    li.active-parent {
+      a, a:hover {
+        background: none;
+        color: @black;
+      }
+    }
+    li a:hover, li a:focus {
+      color: @black;
+      background: none;
+      border-radius: @radius;
+    }
   }
 }
 
@@ -140,4 +204,154 @@ a, a:hover {
   background-color: @brand-primary;
   border-radius: @radius;
 }
+
+.sidebar .sub-level li.active a {
+  padding-left: 1em;
+}
+
+.overview-labels {
+  border-bottom: 1px solid lighten(@brand-default, 50%);
+  margin: 0 0 1em 0;
+  padding: 2em 0;
+  .label {
+    font-size: .8em;
+    margin-right: .4em;
+  }
+}
+
+.server {
+  span.label {
+    clear: left;
+    display: block;
+    float: left;
+    margin: 0 0 0.4em;
+  }
+}
+
+.server_list {
+  a {
+    color: @black;
+    margin-right: 2em;
+  }
+  a:hover {
+    color: @brand-primary;
+  }
+
+}
+
+span.label {
+  padding: 0.5em;
+  font-weight: normal;
+  font-size: .7em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.btn-default {
+  background-image: linear-gradient(to bottom, #f4f4f4 0px, #dfdfdd 100%);
+  background-repeat: repeat-x;
+  border-color: #DFDFDD;
+  text-shadow: 0 1px 0 #F4F4F4;
+}
+
+.btn-default:hover, .btn-default:focus {
+    background-image: none;
+  background-color: #dfdfdd;
+  border-color: #d4d4d1;
+}
+
 .btn-primary { .btn-styles(@btn-primary-bg); }
+
+.btn, .input, select, .form-control, .dropdown-menu {
+  font-size: 1em;
+}
+
+.form-control {
+  border-color: lighten(@brand-default, 50%);
+  height: auto;
+}
+
+.at-hand {
+  color: @black;
+  padding-top: .2em;
+  border-top: 1px solid lighten(@brand-default,50%);
+  border-bottom: 1px solid lighten(@brand-default,50%);
+  background: @white;
+}
+
+.btn-toolbar {
+  padding: 1em 0;
+}
+
+.btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group {
+  margin-left: 0;
+}
+
+.scales {
+  .btn-toolbar {
+    margin: 0;
+    padding: .5em 1em 0 1em;
+    background: @scale-bg;
+  }
+  .year-month-day-hour-buttons {
+    margin-top: .5em;
+  }
+  .date-navigation {
+    padding-bottom: 1em;
+  }
+}
+
+.datepick input {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+.service-changer {
+  margin: 1em 1em 0 0;
+  i {
+    margin-right: .4em;
+    color: lighten(@brand-primary,12%);
+  }
+}
+
+// User menu
+.user-menu {
+  a {
+    .font-leight;
+    padding: .4em;
+    color: lighten(@brand-primary,12%);
+  }
+  a:hover {
+    background: @white;
+    border-radius: @radius;
+    text-decoration: none;
+    color: @black;
+
+  }
+}
+// Footer
+.global-footer-content {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+.global-footer {
+  color: @brand-default;
+  .font-leight(.9em);
+  padding: 1em;
+  img {
+    margin-bottom: 12px;
+  }
+  a {
+    color: @link-color;
+  }
+  .useful-links {
+    margin-top: 34px;
+    a i {
+        text-decoration: none;
+        margin-right: .3em;
+    }
+    a:hover i {
+      text-decoration: none;
+    }
+  }
+}
