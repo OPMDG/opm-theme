@@ -13,7 +13,7 @@ module.exports = function(grunt) {
             ' */\n\n',
     // Task configuration.
     clean: {
-      dist: ['dist']
+      dist: ['dist','report']
     },
     copy: {
       fonts: {
@@ -60,7 +60,10 @@ module.exports = function(grunt) {
     },
     csslint: {
       options: {
-        csslintrc: './.csslintrc'
+        csslintrc: './.csslintrc',
+        formatters: [
+          {id: 'csslint-xml', dest: 'report/csslint.xml'}
+        ]
       },
       src: 'dist/css/<%= pkg.name %>.css'
     }
