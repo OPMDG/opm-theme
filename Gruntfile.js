@@ -62,7 +62,8 @@ module.exports = function(grunt) {
       options: {
         csslintrc: './.csslintrc',
         formatters: [
-          {id: 'lint-xml', dest: 'report/lint.xml'}
+          {id: 'lint-xml', dest: 'report/lint.xml'},
+          {id: 'checkstyle-xml', dest: 'report/checkstyle.xml'}
         ]
       },
       src: 'dist/css/<%= pkg.name %>.css'
