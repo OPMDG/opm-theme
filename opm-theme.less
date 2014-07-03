@@ -436,3 +436,25 @@ label.deactivated {
     }
   }
 }
+
+.tag-cloud {
+
+  float: left;
+  position: relative;
+
+  .selected-tag {
+
+    :hover::before {
+        color: red;
+    }
+
+    span::before {
+      content: "x";
+      font-weight: 700;
+      line-height: 1;
+      opacity: 0.2;
+      text-shadow: 0 1px 0 #fff;
+    }
+
+  }
+}
