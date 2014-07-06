@@ -1,11 +1,8 @@
-1/ download bootstrap sources. Eg. from https://github.com/twbs/bootstrap/archive/v3.2.0.zip
-2/ extract somewhere, eg. "$BSTRP"
-3/ copy content of folder "$BSTRP/less" into "bootstrap/" under your opm-theme folder, eg.
-     cp -R $BSTRP/less/* ~/git/opm-theme/bootstrap/
-4/ install node dependance and grunt. From your opm-theme folder:
+1/ Setup submodule(s)
+2/ install node dependance and grunt. From your opm-theme folder:
     npm install .
     npm install grunt-cli
-5/ compile using grunt:
+3/ compile using grunt:
     opm-theme (master)$ node_modules/grunt-cli/bin/grunt
     Running "clean:dist" (clean) task
     Cleaning dist...OK
@@ -29,5 +26,5 @@
 
     Done, without errors.
 
-6/ Resulting files are produced in "dist/"
+4/ Resulting files are produced in "dist/"
 

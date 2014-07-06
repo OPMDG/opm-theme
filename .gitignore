@@ -1,4 +1,4 @@
 .*.sw*
-bootstrap/*
+report/*
 dist/*
 node_modules
