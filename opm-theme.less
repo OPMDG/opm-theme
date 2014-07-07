@@ -327,7 +327,7 @@ span.label {
     margin: .4em 0 .4em 0;
   }
 }
-//
+
 // Graphs
 .scales {
   .btn-toolbar {
@@ -339,8 +339,12 @@ span.label {
     margin-top: .5em;
   }
   .date-navigation {
+  }
+  .tag-navigation {
     padding-bottom: 1em;
   }
+
+  margin-bottom: 20px;
 }
 
 .datepick input {
@@ -439,16 +443,17 @@ label.deactivated {
 
 .tag-cloud {
 
-  float: left;
-  position: relative;
+  a {
+    font-size: 12px;
+  }
 
-  .selected-tag {
+  a.selected-tag {
 
     :hover::before {
         color: red;
     }
 
-    span::before {
+    &:before {
       content: "x";
       font-weight: 700;
       line-height: 1;
