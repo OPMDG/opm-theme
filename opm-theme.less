@@ -260,7 +260,7 @@ a, a:hover {
 span.label {
   padding: 0.5em;
   font-weight: normal;
-  font-size: .7em;
+  font-size: .9em;
   text-transform: uppercase;
   letter-spacing: .1em;
 }
@@ -316,15 +316,24 @@ span.label {
     text-decoration: none;
     .warehouse-service {
       color: #75517B;
+      display: block;
+      font-weight: bold;
+      margin-bottom: .5em;
     }
   }
   a:hover .warehouses-service {
     color: @brand-primary;
     text-decoration: underline;
   }
-  .service-item h3 {
-    padding: 0 0 .4em 0;
-    margin: .4em 0 .4em 0;
+  .service-item {
+    h3 {
+      padding: 0;
+      margin: .4em 0 .4em 0;
+    }
+    .label {
+      display: block;
+      float: left;
+    }
   }
 }
 
@@ -332,10 +341,10 @@ span.label {
 .scales {
   .btn-toolbar {
     margin: 0;
-    padding: .5em 1em 0 1em;
+    padding: .5em 1em .5em 1em;
     background: @scale-bg;
   }
-  .year-month-day-hour-buttons {
+  .year-month-day-hour-buttons, .forward-backward-buttons, .date-chooser, .customize-button {
     margin-top: .5em;
   }
   .date-navigation {
@@ -421,10 +430,14 @@ label.deactivated {
 }
 .global-footer {
   color: @brand-default;
-  .font-leight(.9em);
+  .font-leight(1.1em);
   padding: 1em;
+  line-height: 160%;
   img {
     margin-bottom: 12px;
+    .font-bold(.9em);
+    letter-spacing: .1em;
+    text-tranform: uppercase;
   }
   a {
     color: @link-color;
@@ -463,3 +476,4 @@ label.deactivated {
 
   }
 }
+
