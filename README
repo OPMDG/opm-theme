@@ -1,8 +1,19 @@
-1/ Setup submodule(s)
+1/ Setup submodule(s). After cloning opm-theme, get inside and:
+    opm-theme (master)$ git submodule init
+    Submodule 'bootstrap' (git@github.com:twbs/bootstrap.git) registered for path 'bootstrap'
+
+    opm-theme (master)$ git submodule update 
+    Cloning into 'bootstrap'... 
+    [...]
+
 2/ install node dependance and grunt. From your opm-theme folder:
-    npm install .
-    npm install grunt-cli
-3/ compile using grunt:
+    opm-theme (master)$ npm install .
+
+   If grunt is not available on your system, you can install it using npm as well:
+    opm-theme (master)$ npm install grunt-cli
+
+3/ compile using grunt. If installed using npm in the repo, you will find it
+   under "node_modules/grunt-cli/bin/grunt":
     opm-theme (master)$ node_modules/grunt-cli/bin/grunt
     Running "clean:dist" (clean) task
     Cleaning dist...OK
