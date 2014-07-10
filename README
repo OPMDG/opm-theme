@@ -2,8 +2,8 @@
     opm-theme (master)$ git submodule init
     Submodule 'bootstrap' (git@github.com:twbs/bootstrap.git) registered for path 'bootstrap'
 
-    opm-theme (master)$ git submodule update 
-    Cloning into 'bootstrap'... 
+    opm-theme (master)$ git submodule update
+    Cloning into 'bootstrap'...
     [...]
 
 2/ install node dependance and grunt. From your opm-theme folder:
