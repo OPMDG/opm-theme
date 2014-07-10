@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         expand: 'true',
         cwd: 'res/',
         filter: 'isFile',
-        src: 'fonts/*',
+        src: '**',
         dest: 'dist/'
       }
     },
