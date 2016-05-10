@@ -139,6 +139,10 @@ h1, h2, h3, h4, h5 {
   .font-bold;
 }
 
+.h1, .h2, .h3, .h4, .h5 {
+  .font-bold;
+}
+
 h1 {
   margin-top: 0;
   padding-top: 0;
@@ -147,6 +151,11 @@ h1 {
 }
 
 h2, h2.panel-title {
+  color: lighten(@brand-primary,12%);
+  font-size: 1.6em;
+}
+
+.h2, .h2.panel-title {
   color: lighten(@brand-primary,12%);
   font-size: 1.6em;
 }
@@ -263,11 +272,16 @@ a, a:hover {
     border: 1px solid @body-bg;
     border-radius: @radius;
   }
-  h2 {
-    border-bottom: 1px solid lighten(@brand-default, 50%);
+  h2, .h2 {
     font-size: 1.4em;
     padding-bottom: .4em;
     margin-bottom: 1em;
+  }
+  h2 {
+    border-bottom: 1px solid lighten(@brand-default, 50%);
+  }
+  .overview-labels {
+    padding: 0 0 5px 0;
   }
 }
 
@@ -477,6 +491,9 @@ label.deactivated {
 
   a {
     font-size: 12px;
+    color: @brand-primary;
+    display: inline-block;
+    margin-right: unset;
   }
 
   a.selected-tag {
